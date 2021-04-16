@@ -1,1 +1,31 @@
-<h1>{{ lorem }}</h1>
+{% extends 'base.html' %}
+<!-- Content block -->
+{% block content %}
+    <div class="container my-3">
+                <div class="row">
+                    <legend>
+                        <h3>{{ article_list[0]['source'] }}</h3>
+                        <hr>
+                    </legend>
+                   
+                    {% for art in article_list %}
+                            <div class="col-md-3">
+                                <div class="card mb-3">
+                                    <img class="img-fluid" src="{{art.urlToImage}}" alt="{{ art.art_title }}" height="75" >
+                                    <div class="card-body">
+                                    <h5 class="card-title">{{art.art_title | truncate(42)}}</h5>
+                                    <p class="card-text">
+                                        {{ art.description | truncate(100)}}
+                                        <br>
+                                        Published on:{{ art.publishedAt }}
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                
+                    {% endfor %}
+            
+        </div>
+    </div>
+{% endblock %}
