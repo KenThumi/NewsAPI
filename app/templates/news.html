@@ -3,12 +3,25 @@
 <!-- Content block -->
 {% block content %}
     <div class="container my-3">
-                <div class="row">
+         <div class="row">
+              {% if article_list !=None %}
                     <legend>
                         <h3>{{ article_list[0]['source'] }}</h3>
                         <hr>
                     </legend>
                     {{ macro.displayNews(article_list) }}
+              {% else %}
+                    <legend>
+                        <h4 class="text-center">Wrong domain name provided</h4>
+                        <hr>
+                    </legend>
+                    <div class="text-center">
+                        
+                            Head over to <a href="/">Homepage</a> to search again.
+                        
+                    </div>
+                 
+              {% endif %}
         </div>
     </div>
 {% endblock %}

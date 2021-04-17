@@ -7,11 +7,14 @@ from ..requests import get_articles
 
 @main.route('/')
 def index(): 
-    '''Home route'''
+    '''Homepage route'''
 
-    articles = get_articles('aljazeera.com')
+    source_query = request.args.get('source_query')
 
-    return render_template('index.html',article_list=articles)
+    if source_query:
+        return redirect(url_for('.source',source=source_query))
+    else:
+        return render_template('index.html')
 
 
 @main.route('/sources/<source>')
@@ -19,5 +22,5 @@ def source(source):
     '''Routes you depending on the route source'''
 
     articles = get_articles(source)
-
+    
     return render_template('news.html',article_list=articles)

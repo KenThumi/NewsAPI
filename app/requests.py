@@ -18,20 +18,21 @@ def get_articles(source):
     '''Function to that gets the json response to our url request'''
 
     get_articles_url = base_url.format(source,api_key)
+    try:
+        with urllib.request.urlopen(get_articles_url) as url:
+            get_articles_data = url.read()
+            get_articles_response = json.loads(get_articles_data)
 
-    with urllib.request.urlopen(get_articles_url) as url:
-        get_articles_data = url.read()
-        get_articles_response = json.loads(get_articles_data)
+            article_results = None
 
-        article_results = None
+            if get_articles_response['totalResults'] > 0:
+                article_list = get_articles_response['articles']
+                article_results = process_results(article_list)
 
-        if get_articles_response['totalResults'] > 0:
-            article_list = get_articles_response['articles']
-            article_results = process_results(article_list)
-
-    
-    return article_results
-
+        
+        return article_results
+    except:
+        return None  #on wrong url 
 
 def process_results(article_list):
     '''
