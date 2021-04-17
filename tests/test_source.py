@@ -6,7 +6,7 @@ class TestSource(unittest.TestCase):
 
     def setUp(self):
         '''Instantiate Source class'''
-        objSource = Source('cnn.com')
+        self.objSource = Source('cnn.com')
 
     def test_instance(self):
         '''Test whether class Source class instantiate objs accordingly'''
