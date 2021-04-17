@@ -5,10 +5,14 @@
     <div class="container my-3">
                 <div class="row">
                     <legend>
-                        <h3>{{ article_list[0]['source'] }}</h3>
+                        <h3 class="text-center">News API Application</h3>
                         <hr>
                     </legend>
-                   {{ macro.displayNews(article_list) }}
+                   <p>
+                       Welcome to this news application. This application uses <a target="_blank" href="https://newsapi.org/">New API</a> to 
+                       fetch and generate News for you from various news sources.Use the <b>above links</b> to check for latest top news from
+                       various news sources. Enjoy!
+                   </p>
         </div>
     </div>
 {% endblock %}
