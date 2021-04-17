@@ -1,5 +1,9 @@
 class Source:
-    pass
+    '''Class that handles news sources'''
+    def __init__(self,url):
+        self.url = url
+
+
 class Article:
     '''Class that handles articles including their structure'''
 
