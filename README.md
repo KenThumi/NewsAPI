@@ -22,7 +22,7 @@ Below are steps to follow:
 In this project, below is a list of technologies used:
 - [Python version 3](https://www.python.org/)
 
-## Dependencies Packages
+## Dependencies 
 1. click v7.1.2
 2. dominate v2.6.0
 3. Flask v1.1.2
