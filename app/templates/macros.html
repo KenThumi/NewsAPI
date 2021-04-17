@@ -1,0 +1,19 @@
+<!-- Display news articles -->
+{% macro displayNews(article_list) %}
+    {% for art in article_list %}
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <img class="img-fluid" src="{{art.urlToImage}}" alt="{{ art.art_title }}" height="75" >
+                <div class="card-body">
+                <h5 class="card-title">{{art.art_title | truncate(42)}}</h5>
+                <p class="card-text">
+                    {{ art.description | truncate(100)}}
+                    <br>
+                    Published on:{{ art.publishedAt }}
+                </p>
+                <a href="{{art.url}}" target="_blank" class="btn btn-sm btn-outline-primary">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endmacro %}
