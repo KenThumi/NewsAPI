@@ -53,7 +53,8 @@ def process_results(article_list):
         description = article_item.get('description')
         url = article_item.get('url')
         urlToImage =article_item.get('urlToImage')
-        publishedAt = article_item.get('publishedAt')[:10]           #datetime.strptime(article_item.get('publishedAt')[:10] , "%Y-%m-%d")
+        publishedAt = datetime.strptime(article_item.get('publishedAt')[:10] , "%Y-%m-%d")
+        publishedAt = str(publishedAt.day)+'-'+str(publishedAt.month)+'-'+str(publishedAt.year)      #formatted to 'd-mm-yyyy' 
         content = article_item.get('content')
 
         if urlToImage:

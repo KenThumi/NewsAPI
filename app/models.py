@@ -13,7 +13,3 @@ class Article:
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt
         self.content = content
-
-
-    # def __repr__(self):
-    #     return "<Article {0} {1} {2} {3} {4} {5} {6} {7}>".format(self.source,self.author,self.art_title,self.description,self.url,self.urlToImage,self.publishedAt,self.content)
