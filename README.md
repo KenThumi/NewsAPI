@@ -33,7 +33,7 @@ Below are steps to follow:
     `export SECRET_KEY='secret key generated'`
 
 9. Inside the same folder,  type following commands to start the application:<br/>
-    `python3 manage.py`
+    `python3 manage.py server`
 10. Open browser and input `http://127.0.0.1:5000`
 11. To edit, use IDE of your choice to work with the project, e.g VsCode, Sublime text ,etc.
 
