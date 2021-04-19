@@ -23,9 +23,19 @@ Below are steps to follow:
 6. Install flak bootstrap and flask script respectively:
         `pip install flask-bootstrap`
         `pip install flask_script`
-3. Inside the same folder, open CLI and type:
-    `./start.sh`
-5. To edit, use IDE of your choice to work with the project, e.g VsCode, Sublime text ,etc.
+7. Head over to [New API](https://newsapi.org/) and generate API key. To generate SECRET KEY 
+    , open REPL by typing command `python3`. Enter these commands:
+            `import secrets` 
+            `secrets.token_hex(16)`
+    Where 16 is key length. Copy the keys to somewhere.
+8. To register the API KEY and SECRET KEY to OS for use, enter these command. Enter the respective key where necessary
+    `export MOVIE_API_KEY='api key generated'`
+    `export SECRET_KEY='secret key generated'`
+
+9. Inside the same folder,  type following commands to start the application:
+    `python3 manage.py`
+10. Open browser and input `http://127.0.0.1:5000`
+11. To edit, use IDE of your choice to work with the project, e.g VsCode, Sublime text ,etc.
 
 ## Technologies Used
 In this project, below is a list of technologies used:
